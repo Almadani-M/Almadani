@@ -16,6 +16,7 @@ public class App {
             System.out.println(name);
         }
 
+
         List<String> studentName = readStudentNamesFromFile("D:\\\\UNI\\\\206\\\\lab\\\\Lab03\\\\src\\\\Student List.txt");
         
         int groupSize = 2; 
@@ -25,6 +26,9 @@ public class App {
         for (int i = 0; i < groups.size(); i++) {
             System.out.println("Group " + (i + 1) + ": " + groups.get(i));
         }
+        selectionSort(studentNames);
+        System.out.println("Selection sort\n");
+        studentNames.forEach(System.out::println);
     }
 
     public static List<String> readStudentNamesFromFile(String fileName) {
@@ -69,7 +73,28 @@ public class App {
         
         return groups;
 }
+public static void selectionSort(List<String> studentNames) {
+    int n = studentNames.size();
+    
+    for (int i = 0; i < n - 1; i++) {
+        int minIndex = i;
+        
+        for (int j = i + 1; j < n; j++) {
+            if (studentNames.get(j).compareTo(studentNames.get(minIndex)) < 0) {
+                minIndex = j;
+            }
+        }
+        
+        Collections.swap(studentNames, i, minIndex);
+    }
 }
+
+
+
+   
+
+}
+
 
 
 
