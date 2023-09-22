@@ -50,6 +50,21 @@ public class App {
     public static void second(String[] args) {
         
     }
+    
+    public static void insertionSort(int[] arr) {
+        int n = arr.length;
+
+        for (int i = 1; i < n; i++) {
+            int key = arr[i];
+            int j = i - 1;
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j--;
+            }
+            arr[j + 1] = key;
+        }
+    }
+
 
     public static List<List<String>> createRandomGroups(List<String> studentNames, int groupSize) {
         
@@ -84,15 +99,9 @@ public static void selectionSort(List<String> studentNames) {
                 minIndex = j;
             }
         }
-        
         Collections.swap(studentNames, i, minIndex);
     }
 }
-
-
-
-   
-
 }
 
 
