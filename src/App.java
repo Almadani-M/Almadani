@@ -88,6 +88,9 @@ public class App {
         
         return groups;
 }
+public static void sort(int[] arr) {
+    insertionSort(arr);
+}
 public static void selectionSort(List<String> studentNames) {
     int n = studentNames.size();
     
@@ -101,6 +104,7 @@ public static void selectionSort(List<String> studentNames) {
         }
         Collections.swap(studentNames, i, minIndex);
     }
+    
 }
 }
 
